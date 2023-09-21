@@ -1,16 +1,17 @@
 CREATE TABLE Book
 (
     Id          BIGSERIAL PRIMARY KEY,
-    Name        VARCHAR(50)        NOT NULL DEFAULT '',
-    Description TEXT               NULL
+    Name        VARCHAR(50) NOT NULL DEFAULT '',
+    Description TEXT        NULL,
+    Genres      TEXT[]      NULL
 );
 
 CREATE TABLE Chapter
 (
     Id      BIGSERIAL PRIMARY KEY,
-    Content TEXT               NOT NULL DEFAULT '',
-    Number  INTEGER            NOT NULL DEFAULT 0,
-    Id_book INTEGER            NOT NULL
+    Content TEXT    NOT NULL DEFAULT '',
+    Number  INTEGER NOT NULL DEFAULT 0,
+    Id_book INTEGER NOT NULL
 );
 
 ALTER TABLE Chapter
@@ -21,18 +22,18 @@ ALTER TABLE Chapter
 CREATE TABLE Users
 (
     Id               BIGSERIAL PRIMARY KEY,
-    First_name       VARCHAR(30)        NULL,
-    Last_name        VARCHAR(30)        NULL,
-    Login            VARCHAR(50)        NOT NULL DEFAULT 'login',
-    Password     VARCHAR(50)        NOT NULL DEFAULT 'password',
-    Telephone_number VARCHAR(12)        NULL
+    First_name       VARCHAR(30) NULL,
+    Last_name        VARCHAR(30) NULL,
+    Login            VARCHAR(50) NOT NULL DEFAULT 'login',
+    Password         VARCHAR(50) NOT NULL DEFAULT 'password',
+    Telephone_number VARCHAR(12) NULL
 );
 
 CREATE TABLE Users_books
 (
     Id       BIGSERIAL PRIMARY KEY NOT NULL,
-    Id_users INTEGER            NOT NULL,
-    Id_books INTEGER            NOT NULL
+    Id_users INTEGER               NOT NULL,
+    Id_books INTEGER               NOT NULL
 );
 
 ALTER TABLE Users_books
@@ -49,16 +50,16 @@ ALTER TABLE Users_books
 CREATE TABLE Author
 (
     Id         BIGSERIAL PRIMARY KEY,
-    First_name VARCHAR(30)        NOT NULL,
-    Surname    VARCHAR(30)        NOT NULL,
-    Patronymic VARCHAR(30)        NOT NULL
+    First_name VARCHAR(30) NOT NULL,
+    Surname    VARCHAR(30) NOT NULL,
+    Patronymic VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE Books_author
 (
     Id        BIGSERIAL PRIMARY KEY,
-    Id_books  INTEGER            NOT NULL,
-    Id_author INTEGER            NOT NULL
+    Id_books  INTEGER NOT NULL,
+    Id_author INTEGER NOT NULL
 );
 
 ALTER TABLE Books_author

@@ -1,8 +1,8 @@
-package enums;
+package entities.enums;
 
 public enum Genre {
     ROMANCE("Romance"),
-    SCIENCE_FICTION("Science fiction"),
+    SCIENCE_FICTION("Science_fiction"),
     FANTASY("Fantasy"),
     MYSTERY("Mystery"),
     THRILLER("Thriller"),
